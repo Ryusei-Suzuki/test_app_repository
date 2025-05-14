@@ -56,4 +56,5 @@ function deleteTodoData($id)
     $dbh -> query($sql);
 
 }
+//プルリクエスト更新用
 
