@@ -7,7 +7,9 @@ setToken(); // 追記
 ?>
 
 
+
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -18,6 +20,9 @@ setToken(); // 追記
 <?php if (!empty($_SESSION['err'])): ?> <!-- // 追記 -->
     <p><?= $_SESSION['err']; ?></p> <!-- // 追記 -->
   <?php endif; ?> <!-- // 追記 -->
+
+
+  
 
    <form action="store.php" method="post"><!--formタグで入力したものをstore.phpに送る。inputタグの二つは送りたい内容を記入する場所の指定 -->
     <input type="hidden" name="token" value="<?= $_SESSION['token']; ?>"> <!--// 追記 -->

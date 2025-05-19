@@ -3,7 +3,7 @@
 
 <?php
 require_once('connection.php');
-session_start(); // 追記
+session_start(); // 追記：役割調べる
 
 // エスケープ処理
 function e($text)
@@ -16,11 +16,16 @@ function e($text)
 function setToken()
 {
     $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(16));//openssl_~関数でランダムな16文字を生成し、bin2hex関数でその文字を16進数に変換し、その結果を$_SESSION['token']に格納している
+
 }
+
 
 // SESSIONに格納されたtokenのチェックを行い、SESSIONにエラー文を格納する
 function checkToken($token)
 {
+    var_dump($_SESSION);
+    exit;
+
     if (empty($_SESSION['token']) || ($_SESSION['token'] !== $token)) {//$_SESSIONが空orトークンが生成したものと一致しない場合。empty():変数が空であるかどうかを検査する
         $_SESSION['err'] = '不正な操作です';
         redirectToPostedPage();
