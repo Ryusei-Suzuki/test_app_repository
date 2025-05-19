@@ -26,5 +26,6 @@ setToken(); // 追記
   <div>
     <a href="index.php">一覧へもどる</a>
   </div>
+  <?php unsetError(); ?>
 </body>
 </html>
