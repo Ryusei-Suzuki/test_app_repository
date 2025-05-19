@@ -4,6 +4,5 @@
 require_once('functions.php');
 
 savePostedData($_POST);
-// var_dump($_POST);
-// exit;
+
 header('Location: ./index.php');
